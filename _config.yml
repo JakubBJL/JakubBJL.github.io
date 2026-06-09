@@ -1,0 +1,29 @@
+# GitHub Pages site configuration
+# User site: this repo must be named <username>.github.io and the site serves at
+# https://<username>.github.io
+# Project site alternative: name the repo anything, then set baseurl to "/<reponame>" below.
+
+title: Jakub Bajla
+tagline: Enterprise architecture for the agentic era
+description: >-
+  Field notes, reference architectures, and governance patterns for building
+  agentic AI on the Microsoft stack. Written for the people who run the platform.
+author: Jakub Bajla
+
+theme: minima
+
+# Your GitHub user site (username JakubBJL; the site serves at the lowercase URL).
+url: "https://jakubbjl.github.io"
+baseurl: ""
+# Project site only: comment the two lines above and use these instead.
+# url: "https://<username>.github.io"
+# baseurl: "/<reponame>"
+
+header_pages:
+  - about.md
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+show_excerpts: true
