@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What this is, and who it is for"
-date: 2026-06-13
+date: 2026-06-10
 tags: [agentic-ai, governance, microsoft, power-platform]
 ---
 
