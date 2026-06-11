@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-head">
+    <div class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- assign words = content | strip_html | number_of_words -%}
+      {%- assign mins = words | divided_by: 220 -%}
+      {%- if mins < 1 %}{% assign mins = 1 %}{% endif %}
+      &middot; {{ mins }} min
+      {%- if page["human-approved"] %} &middot; <b>field-tested</b>{% endif %}
+    </div>
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if page.tags.size > 0 -%}
+  <div class="tags post-footer-tags">
+    {%- for tag in page.tags -%}<span class="tag">{{ tag }}</span>{%- endfor -%}
+  </div>
+  {%- endif -%}
+
+</article>

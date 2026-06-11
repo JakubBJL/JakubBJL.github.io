@@ -1,0 +1,233 @@
+---
+# Field Notes theme: overrides minima with an engineering-logbook look.
+---
+
+$mono-font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+$accent: #0f5132;        // deep field green
+$accent-2: #b45309;      // amber stamp
+$rule: #d9dbd5;
+$ink: #16181d;
+$soft: #4a4f59;
+
+// minima variables, set before import
+$base-font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.62;
+$text-color: $ink;
+$background-color: #fafaf8;
+$brand-color: $accent;
+$grey-color: #5d636e;
+$content-width: 780px;
+
+@import "minima";
+
+a { color: $accent; }
+a:visited { color: darken($accent, 5%); }
+a:hover { color: $accent-2; text-decoration: underline; }
+
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.01em; }
+
+// ---- masthead ----
+.site-header {
+  border-top: none;
+  border-bottom: none;
+  min-height: 0;
+  padding-top: 40px;
+}
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 2px solid $ink;
+  padding-bottom: 14px;
+}
+.masthead-title {
+  font-family: $mono-font-family;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  a, a:visited { color: $ink; text-decoration: none; }
+  .cursor { color: $accent; }
+}
+.masthead-nav {
+  font-family: $mono-font-family;
+  font-size: 13px;
+  a, a:visited { color: $grey-color; text-decoration: none; margin-left: 18px; }
+  a:first-child { margin-left: 0; }
+  a:hover { color: $accent; text-decoration: none; }
+}
+.masthead-tagline {
+  font-family: $mono-font-family;
+  font-size: 12px;
+  color: $grey-color;
+  padding: 10px 0;
+  border-bottom: 1px solid $rule;
+  b { color: $accent-2; font-weight: 500; }
+}
+
+// ---- home: intro + post list ----
+.home > p {
+  padding: 12px 0 0;
+  font-size: 16.5px;
+  color: #343843;
+  max-width: 620px;
+}
+.post-list {
+  margin-left: 0;
+  list-style: none;
+  padding: 6px 0 24px;
+}
+.post-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px dashed $rule;
+  margin-bottom: 0;
+  &:last-child { border-bottom: none; }
+}
+.post-item .post-date {
+  font-family: $mono-font-family;
+  font-size: 12.5px;
+  color: $grey-color;
+  padding-top: 5px;
+}
+.post-item h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 0;
+  a, a:visited { color: $ink; text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { color: $accent; border-bottom-color: $accent; text-decoration: none; }
+}
+.post-item .excerpt {
+  margin-top: 8px;
+  font-size: 15px;
+  color: $soft;
+  p { margin-bottom: 0; }
+}
+.tags { margin-top: 10px; }
+.tag {
+  font-family: $mono-font-family;
+  font-size: 11.5px;
+  color: $accent;
+  margin-right: 10px;
+  &::before { content: "#"; opacity: 0.5; }
+}
+.verified {
+  display: inline-block;
+  font-family: $mono-font-family;
+  font-size: 10.5px;
+  color: $accent-2;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: 2px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+@media screen and (max-width: 600px) {
+  .post-item { grid-template-columns: 1fr; gap: 4px; }
+}
+
+// ---- post / page view ----
+.post-head {
+  border-left: 3px solid $accent;
+  padding-left: 18px;
+  margin-bottom: 28px;
+  .meta {
+    font-family: $mono-font-family;
+    font-size: 12.5px;
+    color: $grey-color;
+    margin-bottom: 8px;
+    b { color: $accent-2; font-weight: 500; }
+  }
+}
+.post-title, .post-head h1 {
+  font-size: 28px;
+  line-height: 1.22;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.post-content {
+  font-size: 16px;
+  max-width: 660px;
+
+  h2 {
+    font-family: $mono-font-family;
+    font-size: 17px;
+    font-weight: 600;
+    color: $accent;
+    margin-top: 1.8em;
+    &::before { content: "## "; opacity: 0.45; }
+  }
+  h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    margin-top: 1.5em;
+  }
+}
+.post-footer-tags {
+  border-top: 1px dashed $rule;
+  margin-top: 36px;
+  padding-top: 14px;
+}
+
+// ---- tables (gridded, logbook style) ----
+table {
+  font-size: 13.5px;
+  line-height: 1.45;
+  border: none;
+  th {
+    font-family: $mono-font-family;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    background: #f0f0ec;
+    border: 1px solid $rule;
+    padding: 8px 10px;
+  }
+  td {
+    border: 1px solid $rule;
+    padding: 8px 10px;
+    vertical-align: top;
+    color: #3c414b;
+  }
+}
+
+// ---- quotes and code ----
+blockquote {
+  background: #f1f4ef;
+  border-left: 3px solid $accent;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #3c4a40;
+}
+pre, code {
+  font-family: $mono-font-family;
+  font-size: 13.5px;
+  background: #f0f0ec;
+  border: 1px solid $rule;
+  border-radius: 3px;
+}
+
+// ---- footer ----
+.site-footer {
+  border-top: 2px solid $ink;
+  padding: 20px 0 48px;
+  .footer-row {
+    font-family: $mono-font-family;
+    font-size: 12px;
+    color: $grey-color;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  a, a:visited { color: $grey-color; }
+  a:hover { color: $accent; text-decoration: none; }
+}

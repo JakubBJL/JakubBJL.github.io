@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Mirrors the GitHub Pages build environment for local previews.
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "~> 232", group: :jekyll_plugins
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 

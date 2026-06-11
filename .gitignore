@@ -1,4 +1,5 @@
 .DS_Store
+.claude/settings.local.json
 _site/
 .jekyll-cache/
 .sass-cache/
