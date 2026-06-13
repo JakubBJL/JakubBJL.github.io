@@ -6,7 +6,7 @@ permalink: /about/
 
 I am Jakub Bajla. I help enterprises adopt Microsoft AI without losing control of it: the governance, the architecture, and the discipline to take agentic AI from a promising pilot to something you can actually run.
 
-I am a Power Platform and AI architect, a Microsoft MVP for Business Applications, the first in Slovakia, and I lead the Power Platform and AI competency at EY. My background spans Microsoft, Microsoft partners, and customer organizations, so I have seen adoption from every angle. I also support a United Nations agency as a Power Platform and AI architect, building the guardrails and the Center of Excellence that let Copilot and agents scale safely.
+I am a Power Platform and AI architect, a Microsoft MVP for Business Applications, the first in Slovakia, and I lead the Power Platform and AI competency at EY. My background spans Microsoft, Microsoft partners, and customer organizations, so I have seen adoption from every angle.
 
 My work sits where most AI programs struggle. Not the demo, but the operating model, the architecture, and the governance that decide whether adoption sticks. I work process-first, and I prove patterns by building them rather than leaving them on paper. I created and teach the Governance Compass, a practical operating model that treats Microsoft 365 Copilot, Copilot Studio agents, and the Power Platform as one coherent system, not three disconnected tools.
 
